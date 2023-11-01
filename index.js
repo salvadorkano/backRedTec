@@ -1,17 +1,6 @@
-const express = require("express");
-const { dbConnection } = require("./database/config");
-const usuariosRoutes = require("./routes/usuarios");
-const app = express();
-const port = 3000;
+require('dotenv').config();
+const Server = require('./models/server')
 
-app.use("/api/usuarios", usuariosRoutes);
+const server = new Server();
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
-
-const callDB = async () => {
-  await dbConnection();
-};
-
-callDB();
+server.listen();
