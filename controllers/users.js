@@ -18,7 +18,7 @@ const userPost = async (req = request, res = response) => {
 
     res.json({
       success: true,
-      user,
+      data: user,
     });
   } catch (error) {
     res.json({
